@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Yora</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="log_in">Log In</string>
+    <string name="facebook_log_in">Facebook Log in</string>
+    <string name="google_log_in">Google Log in</string>
+    <string name="yora_register">YORA! Register</string>
+    <string name="yora_log_in">Yora! Log In</string>
+    <string name="email">Email</string>
 </resources>

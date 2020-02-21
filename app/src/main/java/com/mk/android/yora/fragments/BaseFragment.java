@@ -1,9 +1,9 @@
 package com.mk.android.yora.fragments;
 
+import android.app.Fragment;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 
 import com.mk.android.yora.infrastructure.YoraApplication;
 

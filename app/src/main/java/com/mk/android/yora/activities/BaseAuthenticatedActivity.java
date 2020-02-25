@@ -26,19 +26,7 @@ public abstract class BaseAuthenticatedActivity extends BaseActivity {
             return;
         }
         onYoraCreate(savedInstanceState);
-        final ActionBar actionBar = getSupportActionBar();
-        actionBar.setCustomView(R.layout.action_bar_custom_view);
-        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
 
-        final EditText actionBarEditText = findViewById(R.id.action_bar_search_text);
-        actionBarEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                actionBar.setTitle(actionBarEditText.getText());
-                actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_TITLE);
-                return false;
-            }
-        });
     }
 
     protected abstract void onYoraCreate(Bundle savedInstanceState);

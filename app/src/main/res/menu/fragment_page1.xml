@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/fragment_page1_menu_item1"
+        android:title="Thing 1 on Page 1"
+        android:icon="@mipmap/ic_launcher"
+        app:showAsAction="always"
+    />
+</menu>

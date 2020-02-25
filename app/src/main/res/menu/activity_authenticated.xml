@@ -3,21 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".activities.MainActivity">
+
     <item
-        android:id="@+id/activity_authenticated_menu_thing"
+        android:id="@+id/activity_authenticated_menu_search_button"
+        android:title="Search"
+        app:showAsAction="always"
         android:icon="@mipmap/ic_launcher"
-        android:title="Thing"
-        app:showAsAction="ifRoom" />
+        app:actionViewClass="android.widget.SearchView"/>
     <item
-        android:id="@+id/activity_authenticated_menu_anotherthing"
-        android:icon="@mipmap/ic_launcher"
-        android:title="Another Thing"
-        app:showAsAction="ifRoom" />
-    <item
-        android:id="@+id/activity_authenticated_menu_showGroup"
-        android:checkable="true"
-        android:checked="true"
-        android:icon="@mipmap/ic_launcher"
-        android:title="Show Group"
-        app:showAsAction="ifRoom" />
+        android:id="@+id/activity_authenticated_menu_settings"
+        android:title="Settings"
+        app:showAsAction="never"
+        />
+
 </menu>

@@ -16,15 +16,17 @@ public class MainActivity extends BaseAuthenticatedActivity implements View.OnCl
         setContentView(R.layout.activity_main);
         findViewById(R.id.activity_main_page1_button).setOnClickListener(this);
         findViewById(R.id.activity_main_page2_button).setOnClickListener(this);
+        findViewById(R.id.drawer_page1_button).setOnClickListener(this);
+        findViewById(R.id.drawer_page2_button).setOnClickListener(this);
 
         switchPage(new Page1Fragment());
     }
 
     @Override
     public void onClick(View view) {
-        if (view.getId() == R.id.activity_main_page1_button) {
+        if ((view.getId() == R.id.activity_main_page1_button)||(view.getId() == R.id.drawer_page1_button)) {
             switchPage(new Page1Fragment());
-        } else if (view.getId() == R.id.activity_main_page2_button) {
+        } else if ((view.getId() == R.id.activity_main_page2_button)||(view.getId() == R.id.drawer_page2_button)) {
             switchPage(new Page2Fragment());
         }
     }

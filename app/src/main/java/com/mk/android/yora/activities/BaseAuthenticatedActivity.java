@@ -2,15 +2,13 @@ package com.mk.android.yora.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
+
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.widget.Toolbar;
 
 
 import com.mk.android.yora.R;
@@ -26,7 +24,8 @@ public abstract class BaseAuthenticatedActivity extends BaseActivity {
             return;
         }
         onYoraCreate(savedInstanceState);
-
+        Toolbar toolbar = findViewById(R.id.activity_main_toolbar);
+        setSupportActionBar(toolbar);
     }
 
     protected abstract void onYoraCreate(Bundle savedInstanceState);

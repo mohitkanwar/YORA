@@ -1,33 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="250dp"
+    android:layout_width="300dp"
     android:layout_height="match_parent"
-    android:layout_gravity="left"
-    android:background="#44E0F2F1"
+    android:layout_gravity="start"
+    android:background="#FFF"
     android:orientation="vertical"
+    android:id="@+id/nav_drawer"
     tools:showIn="@layout/activity_main">
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100px"
-        android:id="@+id/drawer_page1_button"
-        android:text="Page 1" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/drawer_page2_button"
-        android:text="Page 2" />
-
-    <View
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#0D47A1">
+    <ImageView
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_margin="16dp"
+        android:id="@+id/include_main_nav_drawer_avatar"
+        android:src="@drawable/ic_drawer"/>
+    <TextView
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_weight="1" />
-
-    <Button
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Log out" />
+        android:layout_toEndOf="@id/include_main_nav_drawer_avatar"
+        android:layout_alignTop="@id/include_main_nav_drawer_avatar"
+        android:id="@+id/include_main_nav_drawer_displayname"
+        android:text="Mohit Kanwar"
+        android:textColor="#8affffff"
+        />
+
+
+</RelativeLayout>
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        >
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/include_main_nav_drawer_top_items"/>
+    </ScrollView>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#E3F2FD"
+        android:id="@+id/include_main_nav_drawer_bottom_items"/>
 </LinearLayout>

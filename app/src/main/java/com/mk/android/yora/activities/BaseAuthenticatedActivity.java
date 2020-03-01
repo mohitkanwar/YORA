@@ -4,16 +4,20 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
-
-
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.Toolbar;
+
+
 
 
 import com.mk.android.yora.R;
 
-public abstract class BaseAuthenticatedActivity extends BaseActivity {
+
+public abstract class BaseAuthenticatedActivity extends BaseActivity implements View.OnClickListener {
+    private static final String TAG = "BaseAuthenticatedActivi";
+
+
     @Override
     public final void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,11 +28,12 @@ public abstract class BaseAuthenticatedActivity extends BaseActivity {
             return;
         }
         onYoraCreate(savedInstanceState);
-        Toolbar toolbar = findViewById(R.id.activity_main_toolbar);
-        setSupportActionBar(toolbar);
+
     }
 
+
     protected abstract void onYoraCreate(Bundle savedInstanceState);
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -49,4 +54,6 @@ public abstract class BaseAuthenticatedActivity extends BaseActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+
 }

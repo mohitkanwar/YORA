@@ -8,4 +8,10 @@
     <string name="yora_register">YORA! Register</string>
     <string name="yora_log_in">Yora! Log In</string>
     <string name="email">Email</string>
+    <string name="contacts">Contacts</string>
+    <string name="inbox">Inbox</string>
+    <string name="sent">Sent Messages</string>
+    <string name="page_1">Page 1</string>
+    <string name="page_2">Page 2</string>
+    <string name="profile">Profile</string>
 </resources>

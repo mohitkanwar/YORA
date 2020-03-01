@@ -47,6 +47,11 @@ public class LoginFragment extends BaseFragment implements View.OnClickListener 
         callbacks = null;
     }
 
+    @Override
+    public int getTitle() {
+        return R.string.log_in;
+    }
+
     public interface Callbacks {
         void onLoggedIn();
     }

@@ -20,17 +20,22 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected NavDrawer navDrawer;
     private Toolbar toolbar;
 
+    private BaseFragment activeBaseFragment;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         application = (YoraApplication)getApplication();
     }
 
-    protected void switchPage(int containerID, BaseFragment fragment) {
+    public void switchPage(int containerID, BaseFragment fragment) {
+
         FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         transaction.replace(containerID, fragment);
         transaction.commit();
+        this.activeBaseFragment = fragment;
+        getSupportActionBar().setTitle(fragment.getTitle());
     }
 
     public void setNavDrawer(NavDrawer navDrawer) {
@@ -51,5 +56,13 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     public Toolbar getToolbar() {
         return toolbar;
+    }
+
+    public YoraApplication getYoraApplication() {
+        return application;
+    }
+
+    public BaseFragment getActiveBaseFragment() {
+        return activeBaseFragment;
     }
 }

@@ -14,6 +14,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.mk.android.yora.R;
 import com.mk.android.yora.activities.BaseActivity;
+import com.mk.android.yora.fragments.BaseFragment;
 
 import java.util.ArrayList;
 
@@ -105,13 +106,15 @@ public class NavDrawer {
             this.containerId = containerId;
         }
 
+
         @Override
         public void inflate(LayoutInflater inflater, ViewGroup navDrawerView) {
             ViewGroup container = navDrawerView.findViewById(containerId);
             if(container==null){
                 throw new RuntimeException("Nav drawer item "+text+" Could not be attached to the Viewgroup. View not found.");
             }
-            view = inflater.inflate(R.layout.list_item_nav_drawer,container);
+            view = inflater.inflate(R.layout.list_item_nav_drawer,container,false);
+            container.addView(view);
             view.setOnClickListener(this);
             icon = view.findViewById(R.id.list_item_nav_drawer_icon);
             textView = view.findViewById(R.id.list_item_nav_drawer_text);
@@ -173,17 +176,19 @@ public class NavDrawer {
         }
     }
 
-    public static class ActivityNavDrawerItem extends BasicNavDrawerItem {
-        private final Class targetActivity;
-        public ActivityNavDrawerItem(Class targetActivity, String text, String badgeValue, int iconId, int containerId) {
+    public static class FragmentNavDrawerItem extends BasicNavDrawerItem {
+        private final BaseFragment targetFragment;
+        private final int targetContainerId;
+        public FragmentNavDrawerItem(BaseFragment targetFragment,int targetContainerId, String text, String badgeValue, int iconId, int containerId) {
             super(text, badgeValue, iconId, containerId);
-            this.targetActivity = targetActivity;
+            this.targetFragment = targetFragment;
+            this.targetContainerId = targetContainerId;
         }
 
         @Override
         public void inflate(LayoutInflater inflater, ViewGroup navDrawerView) {
             super.inflate(inflater, navDrawerView);
-            if(this.navDrawer.activity.getClass() == targetActivity){
+            if(targetFragment.equals(navDrawer.activity.getActiveBaseFragment())){
                 this.navDrawer.setSelectedItem(this);
             }
         }
@@ -192,14 +197,12 @@ public class NavDrawer {
         public void onClick(View v) {
 
             navDrawer.setOpen(false);
-            if(navDrawer.activity.getClass() == targetActivity){
+            if(targetFragment.equals(navDrawer.activity.getActiveBaseFragment())){
                 return;
             }
             super.onClick(v);
             //TODO Animations
-
-            navDrawer.activity.startActivity(new Intent(navDrawer.activity,targetActivity));
-            navDrawer.activity.finish();
+            navDrawer.activity.switchPage(targetContainerId,targetFragment);
         }
     }
 }

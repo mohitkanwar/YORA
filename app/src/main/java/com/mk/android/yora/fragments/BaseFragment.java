@@ -7,6 +7,8 @@ import androidx.annotation.Nullable;
 
 import com.mk.android.yora.infrastructure.YoraApplication;
 
+import java.util.Objects;
+
 public abstract class BaseFragment extends Fragment {
     protected YoraApplication application;
 
@@ -15,4 +17,6 @@ public abstract class BaseFragment extends Fragment {
         super.onCreate(savedInstanceState);
         application = (YoraApplication) getActivity().getApplication();
     }
+
+    public abstract int getTitle();
 }

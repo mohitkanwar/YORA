@@ -24,4 +24,9 @@ public class Page2Fragment extends BaseFragment {
         super.onCreateOptionsMenu(menu, inflater);
         inflater.inflate(R.menu.fragment_page2, menu);
     }
+
+    @Override
+    public int getTitle() {
+        return R.string.page_2;
+    }
 }

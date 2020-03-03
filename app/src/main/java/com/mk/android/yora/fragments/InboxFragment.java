@@ -22,7 +22,10 @@ public class InboxFragment extends BaseAuthenticatedFragment {
         setHasOptionsMenu(true);
         return inflater.inflate(R.layout.fragment_inbox, container, false);
     }
-
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.fragment_page1, menu);
+    }
     @Override
     protected @MenuRes int getMenuId() {
         return R.menu.fragment_page1;

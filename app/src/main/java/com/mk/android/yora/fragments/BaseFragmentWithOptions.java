@@ -16,4 +16,6 @@ public abstract class BaseFragmentWithOptions extends BaseFragment {
 
 
     public abstract boolean onOptionsItemSelected(MenuItem item);
+
+    public abstract void onCreateOptionsMenu(Menu menu, MenuInflater inflater) ;
 }

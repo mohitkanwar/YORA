@@ -2,6 +2,8 @@ package com.mk.android.yora.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,7 +27,10 @@ public class SentMessagesFragment extends BaseFragmentWithOptions {
     protected @MenuRes int getMenuId() {
         return R.menu.fragment_page1;
     }
-
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.fragment_page1, menu);
+    }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
             if(item.getItemId() == R.id.fragment_page1_menu_item1){

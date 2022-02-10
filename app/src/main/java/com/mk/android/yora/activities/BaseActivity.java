@@ -107,4 +107,8 @@ public abstract class BaseActivity extends AppCompatActivity {
 
         void onFadeOutEnd();
     }
+
+    public void updateActionBarTitle(String title){
+        getSupportActionBar().setTitle(title);
+    }
 }

@@ -19,5 +19,6 @@
         <activity android:name=".activities.LoginNarrowActivity" />
         <activity android:name=".activities.RegisterActivity" />
         <activity android:name=".activities.ExternalLoginActivity" />
+        <activity android:name="com.soundcloud.android.crop.CropImageActivity"/>
     </application>
 </manifest>

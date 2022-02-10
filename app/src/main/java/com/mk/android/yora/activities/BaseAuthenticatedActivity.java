@@ -14,7 +14,7 @@ import androidx.annotation.Nullable;
 import com.mk.android.yora.R;
 
 
-public abstract class BaseAuthenticatedActivity extends BaseActivity implements View.OnClickListener {
+public abstract class BaseAuthenticatedActivity extends BaseActivity  {
     private static final String TAG = "BaseAuthenticatedActivi";
 
 

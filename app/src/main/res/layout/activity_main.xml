@@ -7,48 +7,24 @@
     android:id="@+id/drawer_layout">
 
 
-
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:orientation="vertical">
         <include layout="@layout/include_toolbar"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_margin="20dp"
-            android:gravity="center"
-            android:text="Hello Yora!"
-            android:textSize="50dp" />
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
-        <Button
-            android:id="@+id/activity_main_page1_button"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Page 1" />
-
-        <Button
-            android:id="@+id/activity_main_page2_button"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Page 2" />
-        </LinearLayout>
         <FrameLayout
             android:id="@+id/activity_main_fragment_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="16dp" />
     </LinearLayout>
+</ScrollView>
+
 
 
     <include layout="@layout/include_drawer" />
